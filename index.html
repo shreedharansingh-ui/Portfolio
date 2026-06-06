@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="theme-color" content="#ffffff">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <title>Sreedharan Singh | AI/ML Engineer & Backend Developer</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Portfolio of Sreedharan Singh, an AI/ML Engineer and Python Backend Developer specializing in scalable systems, data science, and intelligent ML applications.">
+  <meta name="keywords" content="Sreedharan Singh, AI Engineer, ML Engineer, Python Developer, Backend Developer, Flask, Scikit-learn, Portfolio">
+  <meta name="author" content="Sreedharan Singh">
+  
+  <!-- Social Media Metadata (OpenGraph) -->
+  <meta property="og:title" content="Sreedharan Singh | AI/ML Engineer & Backend Developer">
+  <meta property="og:description" content="Portfolio of Sreedharan Singh. Building intelligent machine learning solutions and scalable backend applications with Python.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://github.com/shreedharansingh-ui">
+  
+  <!-- Tailwind CSS is avoided per instructions; Vanilla CSS used -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Custom Cursor Glow -->
+  <div class="cursor-glow" id="cursor-glow"></div>
+
+  <!-- Background Gradients & Grid -->
+  <div class="bg-blobs">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+  <div class="grid-overlay"></div>
+
+  <!-- Pre-loader Screen -->
+  <div class="loader-wrapper" id="preloader">
+    <div class="loader-content">
+      <div class="loader-logo">
+        <i data-lucide="brain-circuit" style="color: var(--primary);"></i>
+        Sreedharan<span>.</span>
+      </div>
+      <div class="loader-bar">
+        <div class="loader-progress" id="loader-progress"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick test: hide preloader after 3 seconds as fallback -->
+  <script>
+    setTimeout(() => {
+      const preloader = document.getElementById('preloader');
+      if (preloader) {
+        preloader.style.display = 'none';
+        console.log('[Inline Script] Preloader hidden by inline script');
+      }
+    }, 3000);
+  </script>
+
+  <!-- Glassmorphic Header -->
+  <header class="header" id="header">
+    <div class="container nav-container">
+      <a href="#" class="logo" id="nav-logo">
+        <i data-lucide="cpu" style="width: 24px; height: 24px;"></i>
+        Sreedharan<span>.</span>
+      </a>
+      
+      <nav class="nav-menu" id="nav-menu">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+      
+      <div class="mobile-nav-toggle" id="mobile-toggle">
+        <i data-lucide="menu" id="menu-icon"></i>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero-section" id="home">
+    <div class="floating-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+    </div>
+    
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-tag">
+          <i data-lucide="sparkles"></i> Available for Opportunities
+        </div>
+        <h1 class="hero-title">
+          Hi, I am <br>
+          <span style="font-weight: 800;">Sreedharan Singh</span>
+          <span class="role-highlight" id="role-text">AI/ML Engineer</span>
+        </h1>
+        <p class="hero-tagline">
+          Building intelligent machine learning solutions and scalable backend applications with Python.
+        </p>
+        <div class="hero-ctas">
+          <a href="#projects" class="btn btn-primary" id="btn-hero-projects">
+            <span>View Projects</span>
+            <i data-lucide="arrow-up-right"></i>
+          </a>
+          <a href="#contact" class="btn btn-secondary" id="btn-hero-contact">
+            <span>Let's Talk</span>
+            <i data-lucide="mail"></i>
+          </a>
+        </div>
+      </div>
+      
+      <div class="hero-visual">
+        <div class="photo-frame-container" id="hero-photo-frame">
+          <div class="photo-frame-bg"></div>
+          <div class="photo-frame">
+            <img src="profile.jpg" alt="Sreedharan Singh" class="profile-photo">
+            <!-- Floating tech badges -->
+            <div class="floating-badge badge-py">
+              <i data-lucide="code-2" style="color: var(--primary); width: 16px; height: 16px;"></i>
+              <span>Python</span>
+            </div>
+            <div class="floating-badge badge-ai">
+              <i data-lucide="brain" style="color: var(--primary); width: 16px; height: 16px;"></i>
+              <span>AI / ML</span>
+            </div>
+            <div class="floating-badge badge-db">
+              <i data-lucide="database" style="color: var(--primary); width: 16px; height: 16px;"></i>
+              <span>SQL</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT ME SECTION -->
+  <section class="section about-section" id="about">
+    <div class="container about-grid">
+      <div class="about-content">
+        <div class="section-header">
+          <span class="section-tag">About Me</span>
+          <h2 class="section-title">Bridging Data Science & <span>Robust Systems</span></h2>
+        </div>
+        <div class="about-text">
+          <p>
+            I am a Computer Science Engineering student with a strong passion for Artificial Intelligence, Machine Learning, and Backend Development. I enjoy transforming data into meaningful insights and building efficient applications that solve real-world problems.
+          </p>
+          <p>
+            My expertise includes Python, machine learning libraries, data analysis, and API development. I continuously improve my skills through hands-on projects, problem-solving, and exploring modern technologies to create impactful and scalable solutions.
+          </p>
+        </div>
+        
+
+      </div>
+      
+      <!-- Mouse responsive Canvas Neural Network -->
+      <div class="about-visual" id="about-canvas-container">
+        <div class="canvas-label">
+          <i data-lucide="network" style="width: 14px; height: 14px;"></i>
+          <span>Interactive Neural Network</span>
+        </div>
+        <canvas id="neural-network-canvas"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS SECTION -->
+  <section class="section skills-section" id="skills">
+    
+
+    <div class="container">
+      <div class="section-header" style="margin-left: auto; margin-right: auto; text-align: center;">
+        <span class="section-tag">CAPABILITIES</span>
+        <h2 class="section-title">Tech <span>Arsenal</span></h2>
+        <p class="section-desc">
+          Interactive showcase of programming languages, backend systems, machine learning tools, and platforms.
+        </p>
+
+      </div>
+      
+      <div class="skills-grid">
+        <!-- Programming Languages -->
+        <div class="skills-category-card" data-skills='[{"name":"Python","emoji":"🐍"},{"name":"JavaScript","emoji":"🟨"},{"name":"HTML","emoji":"🌐"},{"name":"CSS","emoji":"🎨"}]'>
+          <div class="card-idle-header">
+            <div class="category-icon-tile">💻</div>
+            <h3 class="category-title-text">Programming Languages</h3>
+            <span class="category-subtitle-text">4 Technologies</span>
+            <div class="explore-hint">
+              <span>Hover to explore</span>
+              <i data-lucide="arrow-right" style="width: 12px; height: 12px;"></i>
+            </div>
+          </div>
+          <div class="skills-interactive-container">
+            <!-- Orbs will be dynamically generated here on hover -->
+          </div>
+        </div>
+        
+        <!-- Backend Development -->
+        <div class="skills-category-card" data-skills='[{"name":"Flask","emoji":"🔥"},{"name":"REST APIs","emoji":"🔗"}]'>
+          <div class="card-idle-header">
+            <div class="category-icon-tile">⚙️</div>
+            <h3 class="category-title-text">Backend Development</h3>
+            <span class="category-subtitle-text">2 Technologies</span>
+            <div class="explore-hint">
+              <span>Hover to explore</span>
+              <i data-lucide="arrow-right" style="width: 12px; height: 12px;"></i>
+            </div>
+          </div>
+          <div class="skills-interactive-container">
+            <!-- Orbs will be dynamically generated here on hover -->
+          </div>
+        </div>
+
+        <!-- ML & Data Science -->
+        <div class="skills-category-card" data-skills='[{"name":"NumPy","emoji":"🔢"},{"name":"Pandas","emoji":"🐼"},{"name":"Scikit-Learn","emoji":"🤖"},{"name":"Matplotlib","emoji":"📊"},{"name":"Seaborn","emoji":"📈"}]'>
+          <div class="card-idle-header">
+            <div class="category-icon-tile">🧠</div>
+            <h3 class="category-title-text">ML & Data Science</h3>
+            <span class="category-subtitle-text">5 Technologies</span>
+            <div class="explore-hint">
+              <span>Hover to explore</span>
+              <i data-lucide="arrow-right" style="width: 12px; height: 12px;"></i>
+            </div>
+          </div>
+          <div class="skills-interactive-container">
+            <!-- Orbs will be dynamically generated here on hover -->
+          </div>
+        </div>
+        
+        <!-- Tools & Platforms -->
+        <div class="skills-category-card" data-skills='[{"name":"SQL","emoji":"🗄️"},{"name":"Git","emoji":"🌿"},{"name":"GitHub","emoji":"🐙"},{"name":"Postman","emoji":"📬"}]'>
+          <div class="card-idle-header">
+            <div class="category-icon-tile">🛠️</div>
+            <h3 class="category-title-text">Tools & Platforms</h3>
+            <span class="category-subtitle-text">4 Technologies</span>
+            <div class="explore-hint">
+              <span>Hover to explore</span>
+              <i data-lucide="arrow-right" style="width: 12px; height: 12px;"></i>
+            </div>
+          </div>
+          <div class="skills-interactive-container">
+            <!-- Orbs will be dynamically generated here on hover -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+  <section class="section projects-section" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Featured Work</span>
+        <h2 class="section-title">Building Smart <span>Solutions</span></h2>
+        <p class="section-desc">A selection of projects exploring prediction modeling, utility architectures, and UI features.</p>
+      </div>
+      
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <article class="project-card" id="project-churn">
+          <div class="project-visual">
+            <!-- Churn Prediction visual SVG -->
+            <svg viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="400" height="200" fill="#FAFAFB"/>
+              <path d="M50 150 L120 120 L190 140 L260 80 L330 60" stroke="#FF5A5F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="50" cy="150" r="5" fill="#FF5A5F"/>
+              <circle cx="120" cy="120" r="5" fill="#FF5A5F"/>
+              <circle cx="190" cy="140" r="5" fill="#FF5A5F"/>
+              <circle cx="260" cy="80" r="5" fill="#FF5A5F"/>
+              <circle cx="330" cy="60" r="5" fill="#FF5A5F"/>
+              <!-- Dashed Threshold -->
+              <line x1="50" y1="100" x2="350" y2="100" stroke="#64748B" stroke-dasharray="4 4" stroke-width="1.5"/>
+              <!-- Dashboard card styling -->
+              <rect x="230" y="20" width="120" height="50" rx="6" fill="white" stroke="rgba(255,90,95,0.15)" stroke-width="1"/>
+              <text x="240" y="38" fill="#0F172A" font-family="sans-serif" font-size="10" font-weight="bold">Retention Rate</text>
+              <text x="240" y="56" fill="#FF5A5F" font-family="sans-serif" font-size="14" font-weight="bold">84.2%</text>
+              
+              <!-- Left side status bar -->
+              <rect x="50" y="20" width="100" height="40" rx="6" fill="white" stroke="rgba(15,23,42,0.05)" stroke-width="1"/>
+              <text x="60" y="34" fill="#64748B" font-family="sans-serif" font-size="8">Churn Risk Detected</text>
+              <circle cx="65" cy="46" r="3" fill="#EF4444"/>
+              <text x="73" y="49" fill="#EF4444" font-family="sans-serif" font-size="9" font-weight="bold">High (34 Users)</text>
+            </svg>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Customer Churn Prediction Model</h3>
+            <p class="project-desc">
+              Developed a machine learning model to predict customer churn using historical customer data, helping businesses identify customers who are likely to leave and execute retention plans.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Pandas</span>
+              <span class="tech-tag">NumPy</span>
+              <span class="tech-tag">Scikit-learn</span>
+              <span class="tech-tag">Matplotlib</span>
+            </div>
+            <a class="project-link" href="https://github.com/shreedharansingh-ui" target="_blank" rel="noopener">
+              <span>View Source Code</span>
+              <i data-lucide="github"></i>
+            </a>
+          </div>
+        </article>
+        
+        <!-- Project 2 -->
+        <article class="project-card" id="project-weather">
+          <div class="project-visual">
+            <!-- Weather visual SVG -->
+            <svg viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="400" height="200" fill="#FAFAFB"/>
+              <!-- Glowing Sun in background -->
+              <circle cx="260" cy="80" r="45" fill="rgba(255,90,95,0.06)"/>
+              <circle cx="260" cy="80" r="35" fill="rgba(255,90,95,0.1)"/>
+              <!-- Cloud elements -->
+              <path d="M120 120 C120 100, 140 90, 160 90 C170 90, 185 95, 190 105 C200 95, 220 95, 230 105 C240 105, 250 115, 250 125 C250 135, 240 145, 225 145 L135 145 C125 145, 120 135, 120 120 Z" fill="white" stroke="rgba(255,90,95,0.15)" stroke-width="2"/>
+              <!-- Temperature text overlay -->
+              <text x="145" y="132" fill="#0F172A" font-family="sans-serif" font-size="28" font-weight="800">24°C</text>
+              <!-- Info badges inside SVG -->
+              <rect x="250" y="115" width="90" height="35" rx="6" fill="white" stroke="rgba(15,23,42,0.05)" stroke-width="1"/>
+              <text x="258" y="127" fill="#64748B" font-family="sans-serif" font-size="8">Humidity</text>
+              <text x="258" y="142" fill="#0F172A" font-family="sans-serif" font-size="11" font-weight="bold">64%</text>
+              
+              <rect x="60" y="40" width="80" height="35" rx="6" fill="white" stroke="rgba(15,23,42,0.05)" stroke-width="1"/>
+              <text x="68" y="52" fill="#64748B" font-family="sans-serif" font-size="8">Wind Speed</text>
+              <text x="68" y="67" fill="#0F172A" font-family="sans-serif" font-size="11" font-weight="bold">12 km/h</text>
+            </svg>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Weather App</h3>
+            <p class="project-desc">
+              Built a responsive weather application fetching real-time weather information using the OpenWeather API, mapping temperature, humidity, wind conditions, and warnings.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">HTML</span>
+              <span class="tech-tag">CSS</span>
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">OpenWeather API</span>
+            </div>
+            <a class="project-link" href="https://github.com/shreedharansingh-ui" target="_blank" rel="noopener">
+              <span>View Live Project</span>
+              <i data-lucide="external-link"></i>
+            </a>
+          </div>
+        </article>
+        
+        <!-- Project 3 -->
+        <article class="project-card" id="project-banner">
+          <div class="project-visual">
+            <!-- Rotating card banner visual SVG -->
+            <svg viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="400" height="200" fill="#FAFAFB"/>
+              <!-- Ellipse path representation -->
+              <ellipse cx="200" cy="110" rx="140" ry="40" stroke="rgba(255,90,95,0.2)" stroke-width="2" stroke-dasharray="6 6"/>
+              
+              <!-- 3D Card Stack elements in projection -->
+              <!-- Back card left -->
+              <rect x="70" y="60" width="50" height="60" rx="4" fill="white" stroke="rgba(15,23,42,0.05)" stroke-width="1" transform="rotate(-10 95 90)" opacity="0.6"/>
+              <!-- Back card right -->
+              <rect x="280" y="60" width="50" height="60" rx="4" fill="white" stroke="rgba(15,23,42,0.05)" stroke-width="1" transform="rotate(10 305 90)" opacity="0.6"/>
+              <!-- Center front main card -->
+              <rect x="150" y="65" width="100" height="75" rx="8" fill="white" stroke="rgba(255,90,95,0.4)" stroke-width="2" filter="drop-shadow(0 10px 20px rgba(255,90,95,0.1))"/>
+              <rect x="165" y="80" width="70" height="8" rx="4" fill="rgba(255,90,95,0.8)"/>
+              <rect x="165" y="96" width="50" height="6" rx="3" fill="#E2E8F0"/>
+              <rect x="165" y="110" width="30" height="6" rx="3" fill="#E2E8F0"/>
+              <circle cx="225" cy="106" r="8" fill="#FF5A5F"/>
+            </svg>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Banner 360</h3>
+            <p class="project-desc">
+              Created an interactive 360-degree rotating card banner featuring smooth animation calculations and modern UI layouts to provide an engaging promotional panel.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">HTML</span>
+              <span class="tech-tag">CSS</span>
+              <span class="tech-tag">JavaScript</span>
+            </div>
+            <a class="project-link" href="https://github.com/shreedharansingh-ui" target="_blank" rel="noopener">
+              <span>View Prototype</span>
+              <i data-lucide="external-link"></i>
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION SECTION -->
+  <section class="section education-section" id="education">
+    <div class="container">
+      <div class="section-header" style="margin-left: auto; margin-right: auto; text-align: center;">
+        <span class="section-tag">Learning Path</span>
+        <h2 class="section-title">Education & <span>Milestones</span></h2>
+        <p class="section-desc">Academic background laying down the foundation for computation and systems design.</p>
+      </div>
+      
+      <div class="education-timeline">
+        <!-- B.Tech timeline block -->
+        <div class="timeline-item">
+          <div class="timeline-dot" id="timeline-dot-btech"></div>
+          <div class="timeline-card glass-card">
+            <div class="timeline-meta">
+              <span class="timeline-duration">4 Years (Pursuing)</span>
+              <span class="timeline-institution">Shri Ramswaroop Memorial University</span>
+            </div>
+            <h3 class="timeline-title">Bachelor of Technology (B.Tech)</h3>
+            <p class="timeline-desc" style="font-weight: 600; color: var(--text-main); margin-bottom: 8px;">
+              Computer Science & Engineering
+            </p>
+            <p class="timeline-desc">
+              Focusing on algorithms, artificial intelligence, database management, and object-oriented programming. Building a deep analytical perspective for building software systems and machine learning model validation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="section contact-section" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Get in Touch</span>
+        <h2 class="section-title">Let's Build <span>Together</span></h2>
+        <p class="section-desc">Reach out for collaborations, project design, development requests, or general networking.</p>
+      </div>
+      
+      <div class="contact-grid">
+        <div class="contact-info">
+          <!-- Email Card -->
+          <div class="contact-card glass-card">
+            <div class="contact-icon-box">
+              <i data-lucide="mail"></i>
+            </div>
+            <div>
+              <div class="contact-card-title">Email Me</div>
+              <a href="mailto:shreedharansingh@gmail.com" class="contact-card-value">shreedharansingh@gmail.com</a>
+            </div>
+          </div>
+          
+          <!-- Call Card -->
+          <div class="contact-card glass-card">
+            <div class="contact-icon-box">
+              <i data-lucide="map-pin"></i>
+            </div>
+            <div>
+              <div class="contact-card-title">Location</div>
+              <div class="contact-card-value">India</div>
+            </div>
+          </div>
+          
+          <div style="display:flex;align-items:center;gap:10px;margin:0.5rem 0 0.35rem">
+            <div style="flex:1;height:1px;background:rgba(0,0,0,0.08)"></div>
+            <span style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;color:#b0b0b8;text-transform:uppercase;letter-spacing:0.12em;white-space:nowrap">Connect</span>
+            <div style="flex:1;height:1px;background:rgba(0,0,0,0.08)"></div>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:0.75rem">
+
+            <!-- GitHub -->
+            <a href="https://github.com/shreedharansingh-ui"
+               target="_blank" rel="noopener"
+               style="display:flex;align-items:center;gap:1rem;padding:1rem 1.25rem;border-radius:16px;background:#ffffff;border:1.5px solid rgba(0,0,0,0.1);box-shadow:0 2px 16px rgba(0,0,0,0.06);text-decoration:none;transition:all 0.3s cubic-bezier(0.34,1.56,0.64,1)"
+               onmouseenter="this.style.transform='translateX(6px) scale(1.01)';this.style.borderColor='rgba(0,0,0,0.22)';this.style.boxShadow='0 8px 28px rgba(0,0,0,0.12)'"
+               onmouseleave="this.style.transform='translateX(0) scale(1)';this.style.borderColor='rgba(0,0,0,0.1)';this.style.boxShadow='0 2px 16px rgba(0,0,0,0.06)'"
+            >
+              <div style="width:44px;height:44px;min-width:44px;border-radius:12px;background:#f6f6f6;border:1.5px solid rgba(0,0,0,0.1);display:flex;align-items:center;justify-content:center">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="#1a1a2e">
+                  <path d="M12 0.297C5.373 0.297 0 5.67 0 12.297c0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.757-1.333-1.757-1.087-.744.083-.729.083-.729 1.205.085 1.84 1.236 1.84 1.236 1.07 1.835 2.809 1.305 3.495.997.108-.775.418-1.305.76-1.605-2.665-.3-5.466-1.333-5.466-5.93 0-1.31.468-2.381 1.235-3.221-.123-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.3 1.23.957-.266 1.98-.399 3-.405 1.02.006 2.043.139 3 .405 2.29-1.552 3.297-1.23 3.297-1.23.653 1.653.241 2.873.118 3.176.77.84 1.233 1.911 1.233 3.221 0 4.61-2.803 5.627-5.475 5.921.43.372.823 1.102.823 2.222 0 1.606-.015 2.896-.015 3.286 0 .319.218.69.825.576C20.565 22.097 24 17.598 24 12.297 24 5.67 18.627.297 12 .297z"/>
+                </svg>
+              </div>
+              <div style="flex:1;min-width:0">
+                <div style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;color:#a0a0b0;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px">GitHub</div>
+                <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:700;color:#1a1a2e">View Profile</div>
+              </div>
+              <span style="font-size:16px;color:#ccc;transition:all 0.3s ease">↗</span>
+            </a>
+
+            <!-- LinkedIn -->
+            <a href="https://linkedin.com/in/sreedharan-singh-20a070403"
+               target="_blank" rel="noopener"
+               style="display:flex;align-items:center;gap:1rem;padding:1rem 1.25rem;border-radius:16px;background:#f0f7ff;border:1.5px solid rgba(10,102,194,0.2);box-shadow:0 2px 16px rgba(10,102,194,0.08);text-decoration:none;transition:all 0.3s cubic-bezier(0.34,1.56,0.64,1)"
+               onmouseenter="this.style.transform='translateX(6px) scale(1.01)';this.style.borderColor='rgba(10,102,194,0.4)';this.style.boxShadow='0 8px 28px rgba(10,102,194,0.15)'"
+               onmouseleave="this.style.transform='translateX(0) scale(1)';this.style.borderColor='rgba(10,102,194,0.2)';this.style.boxShadow='0 2px 16px rgba(10,102,194,0.08)'"
+            >
+              <div style="width:44px;height:44px;min-width:44px;border-radius:12px;background:rgba(10,102,194,0.1);border:1.5px solid rgba(10,102,194,0.25);display:flex;align-items:center;justify-content:center">
+                <svg width="22" height="22" viewBox="0 0 34 34" fill="#0a66c2">
+                  <path d="M29.3 0H4.7C2.1 0 0 2.1 0 4.7v24.6C0 31.9 2.1 34 4.7 34h24.6c2.6 0 4.7-2.1 4.7-4.7V4.7C34 2.1 31.9 0 29.3 0zM10.3 28.5H5.2V12.4h5.1v16.1zM7.8 10.2c-1.6 0-2.8-1.3-2.8-2.8S6.2 4.7 7.8 4.7 10.6 6 10.6 7.6 9.4 10.2 7.8 10.2zM28.5 28.5h-5.1V20.8c0-1.8-.1-4.1-2.5-4.1-2.5 0-2.9 2-2.9 4v7.8h-5.1V12.4h4.9v2.2h.1c.7-1.3 2.4-2.6 5-2.6 5.4 0 6.4 3.5 6.4 8.1v9.4z"/>
+                </svg>
+              </div>
+              <div style="flex:1;min-width:0">
+                <div style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;color:#a0a0b0;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px">LinkedIn</div>
+                <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:700;color:#1a1a2e">View Profile</div>
+              </div>
+              <span style="font-size:16px;color:#ccc;transition:all 0.3s ease">↗</span>
+            </a>
+
+          </div>
+        </div>
+        
+        <!-- Interactive Form -->
+        <div class="contact-form-card glass-card">
+          <form id="contact-form">
+            <div class="form-group-row">
+              <div class="form-group">
+                <label for="fname" class="form-label">Full Name</label>
+                <input type="text" id="fname" class="form-control" placeholder="John Doe" required>
+              </div>
+              <div class="form-group">
+                <label for="femail" class="form-label">Email Address</label>
+                <input type="email" id="femail" class="form-control" placeholder="john@example.com" required>
+              </div>
+            </div>
+            <div class="email-inline-error" id="email-inline-error">
+              ⚠ Please enter a valid email address.
+            </div>
+            <div class="form-group">
+              <label for="fsubj" class="form-label">Subject</label>
+              <input type="text" id="fsubj" class="form-control" placeholder="Collaboration Idea" required>
+            </div>
+            <div class="form-group">
+              <label for="fmsg" class="form-label">Message</label>
+              <textarea id="fmsg" class="form-control" placeholder="How can I help you?" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-submit" id="btn-submit-form">
+              <span class="btn-text">Send Message</span>
+              <span class="btn-spinner"></span>
+              <i data-lucide="send" class="btn-text"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="logo">
+        <i data-lucide="cpu" style="width: 20px; height: 20px;"></i>
+        Sreedharan<span>.</span>
+      </div>
+      <div class="footer-copy">
+        &copy; <span id="current-year">2026</span> Sreedharan Singh. All rights reserved.
+      </div>
+      <div class="footer-links">
+        <a href="#home" class="footer-link">Home</a>
+        <a href="#about" class="footer-link">About</a>
+        <a href="#skills" class="footer-link">Skills</a>
+        <a href="#projects" class="footer-link">Projects</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast container for submission feedback -->
+  <div id="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- CDN Script Imports (GSAP, ScrollTrigger, Lucide Icons, EmailJS) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+  <script src="script.js" defer></script>
+
+  <!-- SUCCESS POPUP -->
+  <div class="popup-overlay" id="popup-success">
+    <div class="popup-box">
+      <div class="popup-icon-wrap">
+        <div class="popup-icon-ring">✓</div>
+      </div>
+      <div class="popup-title">Message Sent!</div>
+      <div class="popup-sub">
+        Thanks for reaching out, Sreedharan will get back to you soon.
+      </div>
+      <button class="popup-close" id="popup-success-close">Done</button>
+    </div>
+  </div>
+
+  <!-- ERROR POPUP -->
+  <div class="popup-overlay" id="popup-error">
+    <div class="popup-box popup-box-error">
+      <div class="popup-icon-wrap">
+        <div class="popup-icon-ring popup-icon-ring-error">✗</div>
+      </div>
+      <div class="popup-title">Failed to Send</div>
+      <div class="popup-sub">
+        Something went wrong. Please try again or email directly at
+        <a href="mailto:shreedharansingh@gmail.com"
+           style="color:#ff7070">shreedharansingh@gmail.com</a>
+      </div>
+      <button class="popup-close popup-close-error" id="popup-error-close">Try Again</button>
+    </div>
+  </div>
+</body>
+</html>
