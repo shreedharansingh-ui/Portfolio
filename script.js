@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   } catch (e) {
     console.warn('Lucide icons initialization failed:', e.message);
   }
-
+  
   if (typeof emailjs !== 'undefined' && emailjs && typeof emailjs.init === 'function') {
     emailjs.init('ZVvOr694TaEWltgYF');
   }
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (progress >= 100) {
       progress = 100;
       clearInterval(progressInterval);
-      
+
       // Hide preloader and trigger entrance animations
       gsap.timeline()
         .to(progressFill, { width: '100%', duration: 0.2 })

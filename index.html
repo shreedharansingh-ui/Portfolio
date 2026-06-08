@@ -435,74 +435,85 @@
       <div class="contact-grid">
         <div class="contact-info">
           <!-- Email Card -->
-          <div class="contact-card glass-card">
-            <div class="contact-icon-box">
-              <i data-lucide="mail"></i>
+          <a href="mailto:shreedharansingh@gmail.com"
+             style="display:flex;align-items:center;gap:1rem;padding:1.1rem 1.25rem;border-radius:16px;background:#ffffff;border:1.5px solid rgba(224,92,92,0.15);box-shadow:0 2px 16px rgba(224,92,92,0.07),0 1px 4px rgba(0,0,0,0.04);text-decoration:none;transition:all 0.3s cubic-bezier(0.34,1.56,0.64,1)"
+             onmouseenter="this.style.transform='translateX(5px)';this.style.borderColor='rgba(224,92,92,0.35)';this.style.boxShadow='0 4px 24px rgba(224,92,92,0.14)'"
+             onmouseleave="this.style.transform='translateX(0)';this.style.borderColor='rgba(224,92,92,0.15)';this.style.boxShadow='0 2px 16px rgba(224,92,92,0.07)'"
+          >
+            <div style="width:44px;height:44px;min-width:44px;border-radius:12px;background:rgba(255,90,95,0.08);border:1.5px solid rgba(255,90,95,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff5a5f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
             </div>
-            <div>
-              <div class="contact-card-title">Email Me</div>
-              <a href="mailto:shreedharansingh@gmail.com" class="contact-card-value">shreedharansingh@gmail.com</a>
+            <div style="flex:1;min-width:0">
+              <div style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;color:#b0b0b8;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px">Email Me</div>
+              <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:600;color:#1a1a2e;word-break:break-all">shreedharansingh@gmail.com</div>
+            </div>
+          </a>
+
+          <!-- Location Card -->
+          <div style="display:flex;align-items:center;gap:1rem;padding:1.1rem 1.25rem;border-radius:16px;background:#ffffff;border:1.5px solid rgba(224,92,92,0.15);box-shadow:0 2px 16px rgba(224,92,92,0.07),0 1px 4px rgba(0,0,0,0.04);transition:all 0.3s ease"
+               onmouseenter="this.style.transform='translateX(5px)';this.style.borderColor='rgba(224,92,92,0.35)';this.style.boxShadow='0 4px 24px rgba(224,92,92,0.14)'"
+               onmouseleave="this.style.transform='translateX(0)';this.style.borderColor='rgba(224,92,92,0.15)';this.style.boxShadow='0 2px 16px rgba(224,92,92,0.07)'"
+          >
+            <div style="width:44px;height:44px;min-width:44px;border-radius:12px;background:rgba(255,90,95,0.08);border:1.5px solid rgba(255,90,95,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff5a5f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </div>
+            <div style="flex:1;min-width:0">
+              <div style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;color:#b0b0b8;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px">Location</div>
+              <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:700;color:#1a1a2e">India</div>
             </div>
           </div>
-          
-          <!-- Call Card -->
-          <div class="contact-card glass-card">
-            <div class="contact-icon-box">
-              <i data-lucide="map-pin"></i>
-            </div>
-            <div>
-              <div class="contact-card-title">Location</div>
-              <div class="contact-card-value">India</div>
-            </div>
-          </div>
-          
-          <div style="display:flex;align-items:center;gap:10px;margin:0.5rem 0 0.35rem">
+
+          <!-- Connect Divider -->
+          <div style="display:flex;align-items:center;gap:10px;margin:0.25rem 0">
             <div style="flex:1;height:1px;background:rgba(0,0,0,0.08)"></div>
             <span style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;color:#b0b0b8;text-transform:uppercase;letter-spacing:0.12em;white-space:nowrap">Connect</span>
             <div style="flex:1;height:1px;background:rgba(0,0,0,0.08)"></div>
           </div>
 
-          <div style="display:flex;flex-direction:column;gap:0.75rem">
+          <!-- GitHub Card -->
+          <a href="https://github.com/shreedharansingh-ui"
+             target="_blank" rel="noopener"
+             style="display:flex;align-items:center;gap:1rem;padding:1rem 1.25rem;border-radius:16px;background:#ffffff;border:1.5px solid rgba(0,0,0,0.1);box-shadow:0 2px 16px rgba(0,0,0,0.06);text-decoration:none;transition:all 0.3s cubic-bezier(0.34,1.56,0.64,1)"
+             onmouseenter="this.style.transform='translateX(6px) scale(1.01)';this.style.borderColor='rgba(0,0,0,0.22)';this.style.boxShadow='0 8px 28px rgba(0,0,0,0.12)'"
+             onmouseleave="this.style.transform='translateX(0) scale(1)';this.style.borderColor='rgba(0,0,0,0.1)';this.style.boxShadow='0 2px 16px rgba(0,0,0,0.06)'"
+          >
+            <div style="width:44px;height:44px;min-width:44px;border-radius:12px;background:#f6f6f6;border:1.5px solid rgba(0,0,0,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="#1a1a2e">
+                <path d="M12 0.297C5.373 0.297 0 5.67 0 12.297c0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.757-1.333-1.757-1.087-.744.083-.729.083-.729 1.205.085 1.84 1.236 1.84 1.236 1.07 1.835 2.809 1.305 3.495.997.108-.775.418-1.305.76-1.605-2.665-.3-5.466-1.333-5.466-5.93 0-1.31.468-2.381 1.235-3.221-.123-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.3 1.23.957-.266 1.98-.399 3-.405 1.02.006 2.043.139 3 .405 2.29-1.552 3.297-1.23 3.297-1.23.653 1.653.241 2.873.118 3.176.77.84 1.233 1.911 1.233 3.221 0 4.61-2.803 5.627-5.475 5.921.43.372.823 1.102.823 2.222 0 1.606-.015 2.896-.015 3.286 0 .319.218.69.825.576C20.565 22.097 24 17.598 24 12.297 24 5.67 18.627.297 12 .297z"/>
+              </svg>
+            </div>
+            <div style="flex:1;min-width:0">
+              <div style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;color:#a0a0b0;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px">GitHub</div>
+              <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:700;color:#1a1a2e">View Profile</div>
+            </div>
+            <span style="font-size:16px;color:#ccc">↗</span>
+          </a>
 
-            <!-- GitHub -->
-            <a href="https://github.com/shreedharansingh-ui"
-               target="_blank" rel="noopener"
-               style="display:flex;align-items:center;gap:1rem;padding:1rem 1.25rem;border-radius:16px;background:#ffffff;border:1.5px solid rgba(0,0,0,0.1);box-shadow:0 2px 16px rgba(0,0,0,0.06);text-decoration:none;transition:all 0.3s cubic-bezier(0.34,1.56,0.64,1)"
-               onmouseenter="this.style.transform='translateX(6px) scale(1.01)';this.style.borderColor='rgba(0,0,0,0.22)';this.style.boxShadow='0 8px 28px rgba(0,0,0,0.12)'"
-               onmouseleave="this.style.transform='translateX(0) scale(1)';this.style.borderColor='rgba(0,0,0,0.1)';this.style.boxShadow='0 2px 16px rgba(0,0,0,0.06)'"
-            >
-              <div style="width:44px;height:44px;min-width:44px;border-radius:12px;background:#f6f6f6;border:1.5px solid rgba(0,0,0,0.1);display:flex;align-items:center;justify-content:center">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="#1a1a2e">
-                  <path d="M12 0.297C5.373 0.297 0 5.67 0 12.297c0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.757-1.333-1.757-1.087-.744.083-.729.083-.729 1.205.085 1.84 1.236 1.84 1.236 1.07 1.835 2.809 1.305 3.495.997.108-.775.418-1.305.76-1.605-2.665-.3-5.466-1.333-5.466-5.93 0-1.31.468-2.381 1.235-3.221-.123-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.3 1.23.957-.266 1.98-.399 3-.405 1.02.006 2.043.139 3 .405 2.29-1.552 3.297-1.23 3.297-1.23.653 1.653.241 2.873.118 3.176.77.84 1.233 1.911 1.233 3.221 0 4.61-2.803 5.627-5.475 5.921.43.372.823 1.102.823 2.222 0 1.606-.015 2.896-.015 3.286 0 .319.218.69.825.576C20.565 22.097 24 17.598 24 12.297 24 5.67 18.627.297 12 .297z"/>
-                </svg>
-              </div>
-              <div style="flex:1;min-width:0">
-                <div style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;color:#a0a0b0;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px">GitHub</div>
-                <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:700;color:#1a1a2e">View Profile</div>
-              </div>
-              <span style="font-size:16px;color:#ccc;transition:all 0.3s ease">↗</span>
-            </a>
+          <!-- LinkedIn Card -->
+          <a href="https://linkedin.com/in/sreedharan-singh-20a070403"
+             target="_blank" rel="noopener"
+             style="display:flex;align-items:center;gap:1rem;padding:1rem 1.25rem;border-radius:16px;background:#f0f7ff;border:1.5px solid rgba(10,102,194,0.2);box-shadow:0 2px 16px rgba(10,102,194,0.08);text-decoration:none;transition:all 0.3s cubic-bezier(0.34,1.56,0.64,1)"
+             onmouseenter="this.style.transform='translateX(6px) scale(1.01)';this.style.borderColor='rgba(10,102,194,0.4)';this.style.boxShadow='0 8px 28px rgba(10,102,194,0.15)'"
+             onmouseleave="this.style.transform='translateX(0) scale(1)';this.style.borderColor='rgba(10,102,194,0.2)';this.style.boxShadow='0 2px 16px rgba(10,102,194,0.08)'"
+          >
+            <div style="width:44px;height:44px;min-width:44px;border-radius:12px;background:rgba(10,102,194,0.1);border:1.5px solid rgba(10,102,194,0.25);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+              <svg width="22" height="22" viewBox="0 0 34 34" fill="#0a66c2">
+                <path d="M29.3 0H4.7C2.1 0 0 2.1 0 4.7v24.6C0 31.9 2.1 34 4.7 34h24.6c2.6 0 4.7-2.1 4.7-4.7V4.7C34 2.1 31.9 0 29.3 0zM10.3 28.5H5.2V12.4h5.1v16.1zM7.8 10.2c-1.6 0-2.8-1.3-2.8-2.8S6.2 4.7 7.8 4.7 10.6 6 10.6 7.6 9.4 10.2 7.8 10.2zM28.5 28.5h-5.1V20.8c0-1.8-.1-4.1-2.5-4.1-2.5 0-2.9 2-2.9 4v7.8h-5.1V12.4h4.9v2.2h.1c.7-1.3 2.4-2.6 5-2.6 5.4 0 6.4 3.5 6.4 8.1v9.4z"/>
+              </svg>
+            </div>
+            <div style="flex:1;min-width:0">
+              <div style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;color:#a0a0b0;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px">LinkedIn</div>
+              <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:700;color:#1a1a2e">View Profile</div>
+            </div>
+            <span style="font-size:16px;color:#ccc">↗</span>
+          </a>
 
-            <!-- LinkedIn -->
-            <a href="https://linkedin.com/in/sreedharan-singh-20a070403"
-               target="_blank" rel="noopener"
-               style="display:flex;align-items:center;gap:1rem;padding:1rem 1.25rem;border-radius:16px;background:#f0f7ff;border:1.5px solid rgba(10,102,194,0.2);box-shadow:0 2px 16px rgba(10,102,194,0.08);text-decoration:none;transition:all 0.3s cubic-bezier(0.34,1.56,0.64,1)"
-               onmouseenter="this.style.transform='translateX(6px) scale(1.01)';this.style.borderColor='rgba(10,102,194,0.4)';this.style.boxShadow='0 8px 28px rgba(10,102,194,0.15)'"
-               onmouseleave="this.style.transform='translateX(0) scale(1)';this.style.borderColor='rgba(10,102,194,0.2)';this.style.boxShadow='0 2px 16px rgba(10,102,194,0.08)'"
-            >
-              <div style="width:44px;height:44px;min-width:44px;border-radius:12px;background:rgba(10,102,194,0.1);border:1.5px solid rgba(10,102,194,0.25);display:flex;align-items:center;justify-content:center">
-                <svg width="22" height="22" viewBox="0 0 34 34" fill="#0a66c2">
-                  <path d="M29.3 0H4.7C2.1 0 0 2.1 0 4.7v24.6C0 31.9 2.1 34 4.7 34h24.6c2.6 0 4.7-2.1 4.7-4.7V4.7C34 2.1 31.9 0 29.3 0zM10.3 28.5H5.2V12.4h5.1v16.1zM7.8 10.2c-1.6 0-2.8-1.3-2.8-2.8S6.2 4.7 7.8 4.7 10.6 6 10.6 7.6 9.4 10.2 7.8 10.2zM28.5 28.5h-5.1V20.8c0-1.8-.1-4.1-2.5-4.1-2.5 0-2.9 2-2.9 4v7.8h-5.1V12.4h4.9v2.2h.1c.7-1.3 2.4-2.6 5-2.6 5.4 0 6.4 3.5 6.4 8.1v9.4z"/>
-                </svg>
-              </div>
-              <div style="flex:1;min-width:0">
-                <div style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;color:#a0a0b0;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px">LinkedIn</div>
-                <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:700;color:#1a1a2e">View Profile</div>
-              </div>
-              <span style="font-size:16px;color:#ccc;transition:all 0.3s ease">↗</span>
-            </a>
-
-          </div>
         </div>
         
         <!-- Interactive Form -->

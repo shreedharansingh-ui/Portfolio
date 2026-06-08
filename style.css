@@ -1299,7 +1299,7 @@ ul {
 .contact-info {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 0.85rem;
 }
 
 .contact-card {
@@ -1609,7 +1609,9 @@ textarea.form-control {
   }
 
   .contact-info {
-    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
   }
 
   .contact-card {
