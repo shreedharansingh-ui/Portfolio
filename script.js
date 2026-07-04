@@ -1053,4 +1053,4 @@ document.addEventListener('DOMContentLoaded', () => {
   if (currentYearSpan) {
     currentYearSpan.textContent = new Date().getFullYear();
   }
-});
+});git remote set-url origin https://github.com/shreedharansingh-ui/Portfolio.git
