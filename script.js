@@ -40,6 +40,30 @@ document.addEventListener('DOMContentLoaded', () => {
   const preloader = document.getElementById('preloader');
   const progressFill = document.getElementById('loader-progress');
   let progress = 0;
+  let preloaderHidden = false;
+
+  function hidePreloader() {
+    if (!preloader || preloaderHidden) return;
+    preloaderHidden = true;
+    clearInterval(progressInterval);
+
+    if (progressFill) {
+      gsap.to(progressFill, {
+        width: '100%',
+        duration: 0.3,
+        ease: 'power2.out'
+      });
+    }
+
+    preloader.classList.add('hidden');
+    setTimeout(() => {
+      if (preloader) preloader.style.display = 'none';
+      if (typeof runEntranceAnimations === 'function') runEntranceAnimations();
+    }, 420);
+  }
+  if (typeof window.hidePreloaderSafely !== 'function') {
+    window.hidePreloaderSafely = hidePreloader;
+  }
 
   const progressInterval = setInterval(() => {
     progress += Math.floor(Math.random() * 15) + 5;
@@ -55,11 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
           opacity: 0,
           duration: 0.8,
           ease: 'power4.inOut',
-          onComplete: () => {
-            preloader.style.display = 'none';
-            // Start entrance animation
-            runEntranceAnimations();
-          }
+          onComplete: hidePreloader
         });
     } else {
       progressFill.style.width = `${progress}%`;
@@ -68,13 +88,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // FALLBACK: Force hide preloader after 5 seconds if progress animation hasn't completed
   setTimeout(() => {
-    if (preloader && preloader.style.display !== 'none') {
+    if (!preloaderHidden) {
       console.log('[Preloader] Force hiding after 5s timeout');
-      clearInterval(progressInterval);
-      preloader.style.display = 'none';
-      runEntranceAnimations();
+      hidePreloader();
     }
   }, 5000);
+
+  // Ensure the page opens smoothly once all assets finish loading
+  window.addEventListener('load', () => {
+    if (!preloaderHidden) {
+      hidePreloader();
+    }
+  });
 
   /* -----------------------------------------------------------
      2. CUSTOM CURSOR GLOW (Smooth trailing with Lerp)
@@ -84,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('mousemove', (e) => {
     mouse.x = e.clientX;
     mouse.y = e.clientY;
-  });
+  }, { passive: true });
 
   // Smooth trailing logic using linear interpolation (lerp)
   function updateCursor() {
@@ -92,8 +117,8 @@ document.addEventListener('DOMContentLoaded', () => {
     cursor.x += (mouse.x - cursor.x) * lerpFactor;
     cursor.y += (mouse.y - cursor.y) * lerpFactor;
 
-    cursorGlow.style.left = `${cursor.x}px`;
-    cursorGlow.style.top = `${cursor.y}px`;
+    // Use transform for GPU-accelerated movement
+    cursorGlow.style.transform = `translate(${cursor.x}px, ${cursor.y}px)`;
 
     requestAnimationFrame(updateCursor);
   }
@@ -638,7 +663,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let canvasContainer = document.getElementById('about-canvas-container');
 
   let particles = [];
-  let particleCount = 45;
+  let particleCount = window.innerWidth < 768 ? 20 : 45;
   const connectionDistance = 110;
   const mouseRadius = 140;
 
@@ -724,18 +749,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  function animateCanvas() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    
-    particles.forEach(p => {
-      p.update();
-      p.draw();
-    });
-    
-    connectParticles();
-    canvasAnimId = requestAnimationFrame(animateCanvas);
-  }
-
   // Set listeners for canvas mouse tracking
   canvasContainer.addEventListener('mousemove', (e) => {
     const rect = canvas.getBoundingClientRect();
@@ -749,21 +762,32 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Pause canvas when not visible (saves CPU)
+  let canvasVisible = true;
   const canvasObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        if (!canvasAnimId) animateCanvas();
-      } else {
-        cancelAnimationFrame(canvasAnimId);
-        canvasAnimId = null;
-      }
-    });
+    canvasVisible = entries[0].isIntersecting;
   }, { threshold: 0.1 });
 
   canvasObserver.observe(canvasContainer);
 
-  window.addEventListener('resize', throttle(resizeCanvas, 150));
-  
+  function animateCanvas() {
+    if (!canvasVisible) {
+      canvasAnimId = requestAnimationFrame(animateCanvas);
+      return;
+    }
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particles.forEach(p => { p.update(); p.draw(); });
+    connectParticles();
+    canvasAnimId = requestAnimationFrame(animateCanvas);
+  }
+
+  // Debounced resize handler (better than frequent calls)
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(resizeCanvas, 150);
+  }, { passive: true });
+
   // Trigger initial network setup
   resizeCanvas();
   animateCanvas();
@@ -905,7 +929,7 @@ document.addEventListener('DOMContentLoaded', () => {
         link.classList.add('active');
       }
     });
-  }, 16));
+  }, 16), { passive: true });
 
   // Mobile navigation trigger
   const mobileToggle = document.getElementById('mobile-toggle');
@@ -1053,4 +1077,13 @@ document.addEventListener('DOMContentLoaded', () => {
   if (currentYearSpan) {
     currentYearSpan.textContent = new Date().getFullYear();
   }
-});git remote set-url origin https://github.com/shreedharansingh-ui/Portfolio.git
+
+  // Cleanup on page hide for battery saving
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      ScrollTrigger.getAll().forEach(t => t.disable());
+    } else {
+      ScrollTrigger.getAll().forEach(t => t.enable());
+    }
+  });
+});
