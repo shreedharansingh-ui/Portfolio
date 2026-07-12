@@ -3,11 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="theme-color" content="#ff5a5f">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="dns-prefetch" href="https://cdn.emailjs.com">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <title>Sreedharan Singh | AI/ML Engineer & Backend Developer</title>
   
   <!-- SEO Meta Tags -->
@@ -49,17 +53,6 @@
       </div>
     </div>
   </div>
-
-  <!-- Quick test: hide preloader after 3 seconds as fallback -->
-  <script>
-    setTimeout(() => {
-      const preloader = document.getElementById('preloader');
-      if (preloader) {
-        preloader.style.display = 'none';
-        console.log('[Inline Script] Preloader hidden by inline script');
-      }
-    }, 3000);
-  </script>
 
   <!-- Glassmorphic Header -->
   <header class="header" id="header">
@@ -121,7 +114,7 @@
         <div class="photo-frame-container" id="hero-photo-frame">
           <div class="photo-frame-bg"></div>
           <div class="photo-frame">
-            <img src="profile.jpg" alt="Sreedharan Singh" class="profile-photo">
+            <img src="profile.jpg" alt="Sreedharan Singh" class="profile-photo" loading="lazy" decoding="async">
             <!-- Floating tech badges -->
             <div class="floating-badge badge-py">
               <i data-lucide="code-2" style="color: var(--primary); width: 16px; height: 16px;"></i>
@@ -265,48 +258,55 @@
       
       <div class="projects-grid">
         <!-- Project 1 -->
-        <article class="project-card" id="project-churn">
-          <div class="project-visual">
-            <!-- Churn Prediction visual SVG -->
-            <svg viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="400" height="200" fill="#FAFAFB"/>
-              <path d="M50 150 L120 120 L190 140 L260 80 L330 60" stroke="#FF5A5F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-              <circle cx="50" cy="150" r="5" fill="#FF5A5F"/>
-              <circle cx="120" cy="120" r="5" fill="#FF5A5F"/>
-              <circle cx="190" cy="140" r="5" fill="#FF5A5F"/>
-              <circle cx="260" cy="80" r="5" fill="#FF5A5F"/>
-              <circle cx="330" cy="60" r="5" fill="#FF5A5F"/>
-              <!-- Dashed Threshold -->
-              <line x1="50" y1="100" x2="350" y2="100" stroke="#64748B" stroke-dasharray="4 4" stroke-width="1.5"/>
-              <!-- Dashboard card styling -->
-              <rect x="230" y="20" width="120" height="50" rx="6" fill="white" stroke="rgba(255,90,95,0.15)" stroke-width="1"/>
-              <text x="240" y="38" fill="#0F172A" font-family="sans-serif" font-size="10" font-weight="bold">Retention Rate</text>
-              <text x="240" y="56" fill="#FF5A5F" font-family="sans-serif" font-size="14" font-weight="bold">84.2%</text>
-              
-              <!-- Left side status bar -->
-              <rect x="50" y="20" width="100" height="40" rx="6" fill="white" stroke="rgba(15,23,42,0.05)" stroke-width="1"/>
-              <text x="60" y="34" fill="#64748B" font-family="sans-serif" font-size="8">Churn Risk Detected</text>
-              <circle cx="65" cy="46" r="3" fill="#EF4444"/>
-              <text x="73" y="49" fill="#EF4444" font-family="sans-serif" font-size="9" font-weight="bold">High (34 Users)</text>
-            </svg>
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">Customer Churn Prediction Model</h3>
-            <p class="project-desc">
-              Developed a machine learning model to predict customer churn using historical customer data, helping businesses identify customers who are likely to leave and execute retention plans.
-            </p>
-            <div class="project-tech">
-              <span class="tech-tag">Python</span>
-              <span class="tech-tag">Pandas</span>
-              <span class="tech-tag">NumPy</span>
-              <span class="tech-tag">Scikit-learn</span>
-              <span class="tech-tag">Matplotlib</span>
-            </div>
-            <a class="project-link" href="https://github.com/shreedharansingh-ui" target="_blank" rel="noopener">
-              <span>View Source Code</span>
-              <i data-lucide="github"></i>
-            </a>
-          </div>
+        <article class="project-card" id="project-portfolio">
+  <div class="project-visual">
+    <svg viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="400" height="200" fill="#FAFAFB"/>
+      <!-- Browser chrome -->
+      <rect x="30" y="25" width="340" height="155" rx="10" fill="white" stroke="rgba(255,90,95,0.2)" stroke-width="1.5"/>
+      <rect x="30" y="25" width="340" height="28" rx="10" fill="rgba(255,90,95,0.06)"/>
+      <circle cx="50" cy="39" r="5" fill="#FF5A5F" opacity="0.5"/>
+      <circle cx="66" cy="39" r="5" fill="#FFBD2E" opacity="0.5"/>
+      <circle cx="82" cy="39" r="5" fill="#28CA41" opacity="0.5"/>
+      <rect x="110" y="32" width="180" height="14" rx="7" fill="rgba(0,0,0,0.06)"/>
+      <!-- Nav bar -->
+      <rect x="30" y="53" width="340" height="1" fill="rgba(255,90,95,0.1)"/>
+      <rect x="42" y="65" width="40" height="6" rx="3" fill="rgba(255,90,95,0.15)"/>
+      <rect x="90" y="65" width="30" height="6" rx="3" fill="rgba(0,0,0,0.08)"/>
+      <rect x="128" y="65" width="30" height="6" rx="3" fill="rgba(0,0,0,0.08)"/>
+      <rect x="166" y="65" width="30" height="6" rx="3" fill="rgba(0,0,0,0.08)"/>
+      <!-- Hero text -->
+      <rect x="42" y="88" width="120" height="10" rx="4" fill="#1a1a2e" opacity="0.7"/>
+      <rect x="42" y="104" width="90" height="8" rx="4" fill="rgba(255,90,95,0.6)"/>
+      <rect x="42" y="120" width="140" height="5" rx="3" fill="rgba(0,0,0,0.08)"/>
+      <rect x="42" y="130" width="120" height="5" rx="3" fill="rgba(0,0,0,0.08)"/>
+      <!-- CTA buttons -->
+      <rect x="42" y="146" width="60" height="20" rx="6" fill="#FF5A5F"/>
+      <rect x="110" y="146" width="60" height="20" rx="6" fill="transparent" stroke="rgba(255,90,95,0.4)" stroke-width="1.5"/>
+      <!-- Right side image placeholder -->
+      <rect x="230" y="80" width="120" height="100" rx="10" fill="rgba(255,90,95,0.06)" stroke="rgba(255,90,95,0.15)" stroke-width="1"/>
+      <circle cx="290" cy="112" r="28" fill="rgba(255,90,95,0.1)" stroke="rgba(255,90,95,0.2)" stroke-width="1.5"/>
+      <rect x="252" y="148" width="76" height="6" rx="3" fill="rgba(255,90,95,0.15)"/>
+      <rect x="262" y="158" width="56" height="5" rx="3" fill="rgba(0,0,0,0.07)"/>
+    </svg>
+  </div>
+  <div class="project-content">
+    <h3 class="project-title">Personal Portfolio Website</h3>
+    <p class="project-desc">
+      A modern AI/ML engineer portfolio featuring glassmorphism design, GSAP-powered animations, an interactive neural network canvas, physics-based skill orbs, EmailJS contact integration, and a fully responsive layout.
+    </p>
+    <div class="project-tech">
+      <span class="tech-tag">HTML</span>
+      <span class="tech-tag">CSS</span>
+      <span class="tech-tag">JavaScript</span>
+      <span class="tech-tag">GSAP</span>
+      <span class="tech-tag">EmailJS</span>
+    </div>
+    <a class="project-link" href="https://github.com/shreedharansingh-ui" target="_blank" rel="noopener">
+      <span>View Source Code</span>
+      <i data-lucide="github"></i>
+    </a>
+  </div>
         </article>
         
         <!-- Project 2 -->
@@ -351,42 +351,56 @@
         </article>
         
         <!-- Project 3 -->
-        <article class="project-card" id="project-banner">
-          <div class="project-visual">
-            <!-- Rotating card banner visual SVG -->
-            <svg viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="400" height="200" fill="#FAFAFB"/>
-              <!-- Ellipse path representation -->
-              <ellipse cx="200" cy="110" rx="140" ry="40" stroke="rgba(255,90,95,0.2)" stroke-width="2" stroke-dasharray="6 6"/>
-              
-              <!-- 3D Card Stack elements in projection -->
-              <!-- Back card left -->
-              <rect x="70" y="60" width="50" height="60" rx="4" fill="white" stroke="rgba(15,23,42,0.05)" stroke-width="1" transform="rotate(-10 95 90)" opacity="0.6"/>
-              <!-- Back card right -->
-              <rect x="280" y="60" width="50" height="60" rx="4" fill="white" stroke="rgba(15,23,42,0.05)" stroke-width="1" transform="rotate(10 305 90)" opacity="0.6"/>
-              <!-- Center front main card -->
-              <rect x="150" y="65" width="100" height="75" rx="8" fill="white" stroke="rgba(255,90,95,0.4)" stroke-width="2" filter="drop-shadow(0 10px 20px rgba(255,90,95,0.1))"/>
-              <rect x="165" y="80" width="70" height="8" rx="4" fill="rgba(255,90,95,0.8)"/>
-              <rect x="165" y="96" width="50" height="6" rx="3" fill="#E2E8F0"/>
-              <rect x="165" y="110" width="30" height="6" rx="3" fill="#E2E8F0"/>
-              <circle cx="225" cy="106" r="8" fill="#FF5A5F"/>
-            </svg>
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">Banner 360</h3>
-            <p class="project-desc">
-              Created an interactive 360-degree rotating card banner featuring smooth animation calculations and modern UI layouts to provide an engaging promotional panel.
-            </p>
-            <div class="project-tech">
-              <span class="tech-tag">HTML</span>
-              <span class="tech-tag">CSS</span>
-              <span class="tech-tag">JavaScript</span>
-            </div>
-            <a class="project-link" href="https://github.com/shreedharansingh-ui" target="_blank" rel="noopener">
-              <span>View Prototype</span>
-              <i data-lucide="external-link"></i>
-            </a>
-          </div>
+        <article class="project-card" id="project-fittrack">
+  <div class="project-visual">
+    <svg viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="400" height="200" fill="#FAFAFB"/>
+      <!-- Map background grid -->
+      <line x1="0" y1="50" x2="400" y2="50" stroke="rgba(255,90,95,0.07)" stroke-width="1"/>
+      <line x1="0" y1="100" x2="400" y2="100" stroke="rgba(255,90,95,0.07)" stroke-width="1"/>
+      <line x1="0" y1="150" x2="400" y2="150" stroke="rgba(255,90,95,0.07)" stroke-width="1"/>
+      <line x1="100" y1="0" x2="100" y2="200" stroke="rgba(255,90,95,0.07)" stroke-width="1"/>
+      <line x1="200" y1="0" x2="200" y2="200" stroke="rgba(255,90,95,0.07)" stroke-width="1"/>
+      <line x1="300" y1="0" x2="300" y2="200" stroke="rgba(255,90,95,0.07)" stroke-width="1"/>
+      <!-- Territory regions -->
+      <polygon points="80,40 160,30 180,90 100,110" fill="rgba(255,90,95,0.12)" stroke="rgba(255,90,95,0.35)" stroke-width="1.5"/>
+      <polygon points="200,50 300,40 320,120 210,130" fill="rgba(100,120,255,0.1)" stroke="rgba(100,120,255,0.3)" stroke-width="1.5"/>
+      <polygon points="90,120 170,110 160,170 80,175" fill="rgba(255,90,95,0.08)" stroke="rgba(255,90,95,0.25)" stroke-width="1.5"/>
+      <!-- GPS route path -->
+      <path d="M120 170 Q140 130 160 100 Q185 70 220 80 Q260 90 280 110" stroke="#FF5A5F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6 3"/>
+      <!-- Player markers -->
+      <circle cx="120" cy="170" r="8" fill="#FF5A5F"/>
+      <circle cx="120" cy="170" r="14" fill="rgba(255,90,95,0.2)"/>
+      <circle cx="280" cy="110" r="7" fill="#6478FF"/>
+      <circle cx="280" cy="110" r="12" fill="rgba(100,120,255,0.2)"/>
+      <!-- Score card -->
+      <rect x="290" y="20" width="95" height="55" rx="8" fill="white" stroke="rgba(255,90,95,0.15)" stroke-width="1"/>
+      <text x="300" y="37" fill="#64748B" font-family="sans-serif" font-size="8" font-weight="600">TERRITORIES</text>
+      <text x="300" y="54" fill="#FF5A5F" font-family="sans-serif" font-size="16" font-weight="800">12</text>
+      <text x="322" y="54" fill="#6478FF" font-family="sans-serif" font-size="16" font-weight="800">/ 8</text>
+      <text x="300" y="67" fill="#64748B" font-family="sans-serif" font-size="7">You vs Opponent</text>
+      <!-- GPS tag -->
+      <rect x="18" y="20" width="60" height="22" rx="6" fill="white" stroke="rgba(255,90,95,0.15)" stroke-width="1"/>
+      <text x="26" y="33" fill="#FF5A5F" font-family="sans-serif" font-size="8" font-weight="700">● GPS LIVE</text>
+    </svg>
+  </div>
+  <div class="project-content">
+    <h3 class="project-title">FitTrack — Territory Capture Game</h3>
+    <p class="project-desc">
+      FitTrack is a real-time GPS-based territory capture game that encourages players to stay active by exploring the real world while competing to claim and defend map regions.
+    </p>
+    <div class="project-tech">
+      <span class="tech-tag">React Native</span>
+      <span class="tech-tag">Expo Router</span>
+      <span class="tech-tag">Node.js</span>
+      <span class="tech-tag">Express.js</span>
+      <span class="tech-tag">MongoDB</span>
+    </div>
+    <a class="project-link" href="https://github.com/shreedharansingh-ui" target="_blank" rel="noopener">
+      <span>View Source Code</span>
+      <i data-lucide="github"></i>
+    </a>
+  </div>
         </article>
       </div>
     </div>
@@ -578,7 +592,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
   <script src="https://unpkg.com/lucide@latest" defer></script>
-  <script src="script.js" defer></script>
+  <script type="module" src="script.js"></script>
 
   <!-- SUCCESS POPUP -->
   <div class="popup-overlay" id="popup-success">
